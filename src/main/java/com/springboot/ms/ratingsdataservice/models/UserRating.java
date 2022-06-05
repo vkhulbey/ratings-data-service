@@ -1,4 +1,4 @@
-package com.springboot.ms.ratingsdataservice.model;
+package com.springboot.ms.ratingsdataservice.models;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -13,5 +13,6 @@ import java.util.List;
 @Setter
 public class UserRating {
 
+    private String userId;
     private List<Rating> userRatingList;
 }

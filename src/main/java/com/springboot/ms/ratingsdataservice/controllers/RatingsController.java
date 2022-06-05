@@ -1,7 +1,7 @@
-package com.springboot.ms.ratingsdataservice.controller;
+package com.springboot.ms.ratingsdataservice.controllers;
 
-import com.springboot.ms.ratingsdataservice.model.Rating;
-import com.springboot.ms.ratingsdataservice.model.UserRating;
+import com.springboot.ms.ratingsdataservice.models.Rating;
+import com.springboot.ms.ratingsdataservice.models.UserRating;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,7 +23,7 @@ public class RatingsController {
                 .stream()
                 .filter(rating -> rating.getUserId().equals(userId))
                 .collect(Collectors.toList());
-        return new UserRating(filteredRatingList);
+        return new UserRating(userId, filteredRatingList);
     }
 
     private static List<Rating> getRatingList() {
